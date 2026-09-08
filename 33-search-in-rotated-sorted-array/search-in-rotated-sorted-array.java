@@ -10,7 +10,6 @@ class Solution {
                 return mid;
             }
 
-            // Check which half is sorted
             if (nums[left] <= nums[mid]) {
                 // Left half is sorted
                 if (nums[left] <= target && target < nums[mid]) {

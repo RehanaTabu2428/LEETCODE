@@ -6,16 +6,33 @@ class Solution {
         while(l<r){
             int mid=l+(r-l)/2;
             int count=0;
+            count=countf(matrix,mid);
+            /*int count=0;
             for(int i=0;i<row;i++){
                 for(int j=0;j<row;j++){
                     if(matrix[i][j]<=mid) count++;
                 }
-            }
+            }*/
             if(count<k){
               l=mid+1;
             } 
             else r=mid;
         }
         return l;
+    }
+
+    private int countf(int[][] matrix, int target){
+        int n=matrix.length;
+        int row=n-1;
+        int col=0;
+        int count=0;
+        while(row>=0 && col<n){
+            if(matrix[row][col]<=target){
+                count+=row+1;
+                col++;
+            }
+            else row--;
+        }
+        return count;
     }
 }

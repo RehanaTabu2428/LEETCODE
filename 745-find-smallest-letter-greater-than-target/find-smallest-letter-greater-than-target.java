@@ -6,8 +6,8 @@ class Solution {
         while(l<=r){
             int mid=l+(r-l)/2;
             if(letters[mid]>target) {
-                ans=mid;
-               r=mid-1;
+                 ans=mid;
+                 r=mid-1;
             }
             else l=mid+1;
         }
